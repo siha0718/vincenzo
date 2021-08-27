@@ -26,6 +26,14 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import android.widget.ImageView;
+
+import android.graphics.drawable.Drawable;
+
+
 
 public class Frag1_1 extends Fragment {
     private View view;
@@ -34,10 +42,16 @@ public class Frag1_1 extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList mMyData;
 
+
+
+
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.frag1_1,container,false);
+
 
         RecyclerView recyclerView1 = view.findViewById(R.id.recyclerView1);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
@@ -49,6 +63,9 @@ public class Frag1_1 extends Fragment {
 
         ThreadProc();
 
+
+
+
         return view;
     }
 
@@ -58,7 +75,7 @@ public class Frag1_1 extends Fragment {
         new Thread() {
             @Override
             public void run() {
-                //super.run();
+                //superrun();
                 String str,receiveMsg = "";
 
                 String urlStr = "http://3.36.111.114/jsonprint4.php";
@@ -100,6 +117,9 @@ public class Frag1_1 extends Fragment {
 
     private void jsonParsing(String json) {
 
+
+
+
         try {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray cafeArr = jsonObject.getJSONArray("cafe");
@@ -110,6 +130,13 @@ public class Frag1_1 extends Fragment {
                 cafe cafe = new cafe();
 
                 cafe.setName(cafeObj.getString("name"));
+                cafe.setResId(cafe.getResId());
+
+
+//                cafe.setAddress(cafeObj.getString("address"));
+//                cafe.setSize(cafeObj.getString("size"));
+//                cafe.setLatitude(cafeObj.getString("latitude"));
+//                cafe.setLongitude(cafeObj.getString("longitude"));
                 // BookRecyclerAdapter에 Book
                 adapter.addItem(cafe);
             }
