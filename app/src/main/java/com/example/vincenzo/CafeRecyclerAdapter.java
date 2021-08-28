@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONObject;
@@ -17,8 +18,6 @@ import java.util.ArrayList;
 public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapter.ItemViewHolder> {
 
     ArrayList<cafe> cafeList = new ArrayList<cafe>();
-
-
 
 
     @NonNull
@@ -193,7 +192,6 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
                 textView1.setText(cafe.getName());
                 ImageView1.setBackgroundResource(R.drawable.shop1);
             }
-
 
 
 
