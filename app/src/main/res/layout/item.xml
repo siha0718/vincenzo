@@ -47,6 +47,7 @@
                     android:textSize="@dimen/text_size_small2"
                     android:textStyle="bold"
                     android:backgroundTint="@color/white"
+                    android:singleLine="true"
 
                     />
 

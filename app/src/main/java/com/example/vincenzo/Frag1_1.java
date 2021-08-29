@@ -331,8 +331,8 @@ public class Frag1_1 extends Fragment {
 
 //                cafe.setAddress(cafeObj.getString("address"));
 //                cafe.setSize(cafeObj.getString("size"));
-//                cafe.setLatitude(cafeObj.getString("latitude"));
-//                cafe.setLongitude(cafeObj.getString("longitude"));
+                cafe.setLatitude(cafeObj.getDouble("latitude"));
+                cafe.setLongitude(cafeObj.getDouble("longitude"));
                 // BookRecyclerAdapter에 Book
                 //adapter.addItem(cafe);
                 adapter.addItem(cafe);

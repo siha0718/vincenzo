@@ -25,6 +25,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a', 'x86_64'
+            universalApk true
+        }
+
+    }
 }
 
 dependencies {
@@ -39,4 +48,12 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:24.0.0'
     implementation 'gun0912.ted:tedpermission:2.2.0'
     implementation 'com.android.volley:volley:1.1.0'
+    implementation files('libs/libDaumMapAndroid.jar')
+    implementation 'com.google.android.libraries.maps:maps:3.1.0-beta'
+    implementation files('libs/libDaumMapAndroid.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation group: 'com.opencsv', name: 'opencsv', version: '4.6'
+
+
+
 }

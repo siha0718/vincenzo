@@ -44,6 +44,7 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int position) {
         itemViewHolder.onBind(cafeList.get(position));
+        itemViewHolder.setIsRecyclable(false);
     }
 
     @Override
@@ -77,6 +78,8 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
                         Intent intent = new Intent(mContext, second_activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                         intent.putExtra("name", cafeList.get(pos).getName());
+                        intent.putExtra("latitude", cafeList.get(pos).getLatitude());
+                        intent.putExtra("longitude", cafeList.get(pos).getLongitude());
                         mContext.startActivity(intent);
                     }
                 }
@@ -123,9 +126,6 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
             }else if (name.equals("뚜레쥬르(숙대입구)")){
                 textView1.setText(cafe.getName());
                 ImageView1.setBackgroundResource(List.touslesjours.get(imageId));
-            }else if (name.equals("투썸플레이스 용산청파삼거리")){
-                textView1.setText(cafe.getName());
-                ImageView1.setBackgroundResource(List.twosome.get(imageId));
             }else if (name.equals("커피나무숙명여대점")){
                 textView1.setText(cafe.getName());
                 ImageView1.setBackgroundResource(List.coffenamu.get(imageId));
