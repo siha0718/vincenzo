@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Vincenzo"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".SubActivity"
+            android:name=".second_activity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

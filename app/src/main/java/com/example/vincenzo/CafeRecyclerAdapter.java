@@ -1,5 +1,6 @@
 package com.example.vincenzo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -20,13 +22,22 @@ import java.util.ArrayList;
 public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapter.ItemViewHolder> {
 
     ArrayList<cafe> cafeList = new ArrayList<cafe>();
+    private TextView textView1, textView2, textView3;        //textView4, textView5;\
+    //private Button textView1;
+    private ImageView ImageView1, ImageView2;
+    private Context mContext;
 
+
+    public CafeRecyclerAdapter(Context context){
+        this.mContext = context;
+    }
 
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+
         return new ItemViewHolder(view);
     }
 
@@ -36,9 +47,7 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
     }
 
     @Override
-    public int getItemCount() {
-        return cafeList.size();
-    }
+    public int getItemCount() {   return cafeList.size();  }
 
     public void addItem(cafe cafe) {
         cafeList.add(cafe);
@@ -46,12 +55,6 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
 
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
-
-
-        //private TextView textView1, textView2, textView3;        //textView4, textView5;\
-        private Button textView1;
-        private ImageView ImageView1, ImageView2;
-
 
 
         public ItemViewHolder(@NonNull View itemView) {
@@ -65,9 +68,19 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
 //            textView4 = itemView.findViewById(R.id.textView4);
 //            textView5 = itemView.findViewById(R.id.textView5);
 
-            //이미지 랜덤하게 출력하기
+            itemView.setClickable(true);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        Intent intent = new Intent(mContext, second_activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-
+                        intent.putExtra("name", cafeList.get(pos).getName());
+                        mContext.startActivity(intent);
+                    }
+                }
+            });
 
         }
         // 실제 데이터를 1개의 객체마다 1:1 대응하여 바인딩시킨다.
@@ -201,6 +214,7 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
 
 
 
+
 //            textView1.setText(cafe.getName());
 //            ImageView1.setBackgroundResource(listResId.get(imageId));
 
@@ -215,5 +229,8 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
 
 
         }
+
     }
+
+
 }

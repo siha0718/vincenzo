@@ -12,6 +12,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private Frag2 frag2;
     private Frag3 frag3;
     private Frag4 frag4;
+
 
     private CafeRecyclerAdapter adapter;
 
@@ -76,9 +78,11 @@ public class MainActivity extends AppCompatActivity {
         frag4 = new Frag4();
         setFrag(0);//첫 프래그먼트 화면을 무엇으로 지정해줄것인지 선택
 
+
+
     }
     //프래그먼트 교체가 일어나는 실행문
-    private void setFrag(int n){
+    public void setFrag(int n){
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
         switch (n){
@@ -98,9 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.main_frame,frag4);
                 ft.commit();
                 break;
-
-
         }
     }
+
 
 } //MainActivity

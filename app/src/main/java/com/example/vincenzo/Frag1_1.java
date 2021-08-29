@@ -3,6 +3,7 @@ package com.example.vincenzo;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +41,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -57,29 +60,33 @@ public class Frag1_1 extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList mMyData;
 
+
     private GpsTracker gpsTracker;
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-
+    private double latitude;
+    private double longitude;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.frag1_1,container,false);
+        view= inflater.inflate(R.layout.frag1_1,container,false);
 
         RecyclerView recyclerView1 = view.findViewById(R.id.recyclerView1);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
         recyclerView1.setLayoutManager(linearLayoutManager);
         recyclerView1.setHasFixedSize(true);
 
-        adapter = new CafeRecyclerAdapter();
+        mMyData = new ArrayList<>();
+
+        adapter = new CafeRecyclerAdapter(this.getContext());
         recyclerView1.setAdapter(adapter);
 
         ThreadProc();
 
-
+        //위치정보 받기
         if (!checkLocationServicesStatus()) {
 
             showDialogForLocationServiceSetting();
@@ -97,15 +104,17 @@ public class Frag1_1 extends Fragment {
 
                 gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
 
-                double latitude = gpsTracker.getLatitude();
-                double longitude = gpsTracker.getLongitude();
+                latitude = gpsTracker.getLatitude();
+                longitude = gpsTracker.getLongitude();
 
 //                String address = getCurrentAddress(latitude, longitude);
 //                textview_address.setText(address);
 
                 Toast.makeText(Frag1_1.this.getActivity(), "현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
+
             }
         });
+
 
         return view;
     }
@@ -267,7 +276,7 @@ public class Frag1_1 extends Fragment {
                 //superrun();
                 String str,receiveMsg = "";
 
-                String urlStr = "http://13.124.253.12/jsonprint5.php";
+                String urlStr = "http://52.78.145.144/jsonprint5.php";
                 try {
                     URL url = new URL(urlStr);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -310,6 +319,7 @@ public class Frag1_1 extends Fragment {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray cafeArr = jsonObject.getJSONArray("cafe");
 
+
             for (int i=0;i<cafeArr.length();i++) {
                 JSONObject cafeObj = cafeArr.getJSONObject(i);
 
@@ -324,7 +334,9 @@ public class Frag1_1 extends Fragment {
 //                cafe.setLatitude(cafeObj.getString("latitude"));
 //                cafe.setLongitude(cafeObj.getString("longitude"));
                 // BookRecyclerAdapter에 Book
+                //adapter.addItem(cafe);
                 adapter.addItem(cafe);
+
             }
 
 
