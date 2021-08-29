@@ -19,6 +19,7 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/Vincenzo3/app/src/main/res/layout/frag4.xml" value="0.2203125" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Vincenzo3/app/src/main/res/menu/bottom_menu.xml" value="0.264" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sub.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/frag1.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/frag1_1.xml" value="0.33125" />
         <entry key="app/src/main/res/layout/frag2.xml" value="0.21197916666666666" />
@@ -28,6 +29,7 @@
         <entry key="app/src/main/res/layout/item.xml" value="0.33125" />
         <entry key="app/src/main/res/layout/json_test.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/sub_activity.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.21197916666666666" />
       </map>
     </option>

@@ -1,8 +1,10 @@
 package com.example.vincenzo;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,8 +47,12 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textView1, textView2, textView3;        //textView4, textView5;
+
+        //private TextView textView1, textView2, textView3;        //textView4, textView5;\
+        private Button textView1;
         private ImageView ImageView1, ImageView2;
+
+
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
