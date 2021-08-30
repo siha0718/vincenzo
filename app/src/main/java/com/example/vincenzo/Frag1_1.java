@@ -15,7 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,7 +64,7 @@ public class Frag1_1 extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList mMyData;
 
-
+    //현재위치정보
     private GpsTracker gpsTracker;
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
@@ -69,6 +72,9 @@ public class Frag1_1 extends Fragment {
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
     private double user_latitude;
     private double user_longitude;
+
+    //spinner 배열
+    private static final  String[] spinner_items = {"혼잡도순", "거리순"};
 
     @Nullable
     @Override
@@ -85,6 +91,28 @@ public class Frag1_1 extends Fragment {
         adapter = new CafeRecyclerAdapter(this.getContext());
         recyclerView1.setAdapter(adapter);
 
+        Spinner spinner = view.findViewById(R.id.spinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this.getActivity(), R.layout.spinner_layout, spinner_items
+        );
+
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            //선택되면
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+                Toast.makeText(getActivity(),Integer.toString(position),Toast.LENGTH_SHORT);
+            }
+
+            //아무것도 선택되지 않은 상태일 때
+            @Override
+            public void onNothingSelected(AdapterView<?> parent){
+
+            }
+        });
+
         ThreadProc();
 
         //위치정보 받기
@@ -96,25 +124,25 @@ public class Frag1_1 extends Fragment {
             checkRunTimePermission();
         }
 
-        TextView ShowLocationButton = (TextView) view.findViewById(R.id.textView3);
-        ShowLocationButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View arg0)
-            {
-
-                gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
-
-                user_latitude = gpsTracker.getLatitude();
-                user_longitude = gpsTracker.getLongitude();
-
-//                String address = getCurrentAddress(latitude, longitude);
-//                textview_address.setText(address);
-
-                Toast.makeText(Frag1_1.this.getActivity(), "현재위치 \n위도 " + user_latitude + "\n경도 " + user_longitude, Toast.LENGTH_LONG).show();
-
-            }
-        });
+//        TextView ShowLocationButton = (TextView) view.findViewById(R.id.textView3);
+//        ShowLocationButton.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View arg0)
+//            {
+//
+//                gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
+//
+//                user_latitude = gpsTracker.getLatitude();
+//                user_longitude = gpsTracker.getLongitude();
+//
+////                String address = getCurrentAddress(latitude, longitude);
+////                textview_address.setText(address);
+//
+//                Toast.makeText(Frag1_1.this.getActivity(), "현재위치 \n위도 " + user_latitude + "\n경도 " + user_longitude, Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
 
 
         return view;

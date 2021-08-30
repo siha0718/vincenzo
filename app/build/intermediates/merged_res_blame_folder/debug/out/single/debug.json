@@ -652,6 +652,10 @@
         "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/drawable-mdpi/shop1.png"
     },
     {
+        "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/layout_spinner_dropdown.xml.flat",
+        "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/layout/spinner_dropdown.xml"
+    },
+    {
         "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/drawable-mdpi_sulbing1.jpeg.flat",
         "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/drawable-mdpi/sulbing1.jpeg"
     },
@@ -698,6 +702,10 @@
     {
         "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/drawable-mdpi_etccoffee2.jpeg.flat",
         "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/drawable-mdpi/etccoffee2.jpeg"
+    },
+    {
+        "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/layout_spinner_layout.xml.flat",
+        "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/layout/spinner_layout.xml"
     },
     {
         "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/drawable-mdpi_dearfine3.jpeg.flat",
@@ -854,6 +862,10 @@
     {
         "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/drawable-mdpi_cheongpadongcoffee2.jpeg.flat",
         "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/drawable-mdpi/cheongpadongcoffee2.jpeg"
+    },
+    {
+        "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/drawable_spinner_background.xml.flat",
+        "source": "/Users/sha/Documents/GitHub/vincenzo/app/src/main/res/drawable/spinner_background.xml"
     },
     {
         "merged": "/Users/sha/Documents/GitHub/vincenzo/app/build/intermediates/merged_res/debug/layout_frag1_1.xml.flat",
