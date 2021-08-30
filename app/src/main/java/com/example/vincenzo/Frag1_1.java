@@ -276,7 +276,7 @@ public class Frag1_1 extends Fragment {
                 //superrun();
                 String str,receiveMsg = "";
 
-                String urlStr = "http://52.78.145.144/jsonprint5.php";
+                String urlStr = "http://3.35.138.25/jsonprint5.php";
                 try {
                     URL url = new URL(urlStr);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();

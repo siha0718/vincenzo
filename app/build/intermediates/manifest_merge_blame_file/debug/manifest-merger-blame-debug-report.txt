@@ -1,0 +1,119 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.vincenzo"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:7:5-81
+13-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:7:22-78
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Maps API needs OpenGL ES 2.0. -->
+14-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:10:3-76
+14-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:10:20-74
+15    <uses-feature
+15-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:15:3-17:30
+16        android:glEsVersion="0x00020000"
+16-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:16:5-37
+17        android:required="true" />
+17-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:17:5-28
+18
+19    <application
+19-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:9:5-34:19
+20        android:allowBackup="true"
+20-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:11:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.5.0] /Users/sha/.gradle/caches/transforms-3/e759884e8e1539e68246ec4d8729cc98/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+23-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:12:9-43
+24        android:label="@string/app_name"
+24-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:13:9-41
+25        android:networkSecurityConfig="@xml/network_security_config"
+25-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:10:9-69
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:14:9-54
+27        android:supportsRtl="true"
+27-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:15:9-35
+28        android:testOnly="true"
+29        android:theme="@style/Theme.Vincenzo"
+29-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:16:9-46
+30        android:usesCleartextTraffic="true" >
+30-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:17:9-44
+31        <activity
+31-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:18:9-20:39
+32            android:name="com.example.vincenzo.second_activity"
+32-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:19:13-44
+33            android:exported="true" />
+33-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:20:13-36
+34        <activity
+34-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:21:9-29:20
+35            android:name="com.example.vincenzo.MainActivity"
+35-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:22:13-41
+36            android:exported="true" >
+36-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:23:13-36
+37            <intent-filter>
+37-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:24:13-28:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:25:17-69
+38-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:25:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:27:17-77
+40-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:27:27-74
+41            </intent-filter>
+42        </activity>
+43
+44        <meta-data
+44-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:31:9-33:64
+45            android:name="com.kakao.sdk.AppKey"
+45-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:32:13-48
+46            android:value="818522ea695f7a20c1eb9d9843676b37" />
+46-->/Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:33:13-61
+47        <!-- Required for Android P onwards. -->
+48        <uses-library
+48-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:20:7-86
+49            android:name="org.apache.http.legacy"
+49-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:20:21-58
+50            android:required="false" />
+50-->[com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:20:59-83
+51
+52        <activity
+52-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:10:9-14:67
+53            android:name="com.gun0912.tedpermission.TedPermissionActivity"
+53-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:11:13-75
+54            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
+54-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:12:13-144
+55            android:screenOrientation="unspecified"
+55-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:13:13-52
+56            android:theme="@style/Theme.Transparent.Permission" />
+56-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:14:13-64
+57        <activity
+57-->[com.google.android.gms:play-services-base:15.0.1] /Users/sha/.gradle/caches/transforms-3/81ff02d2fc1f99cc673965460f9f26d6/transformed/jetified-play-services-base-15.0.1/AndroidManifest.xml:23:9-26:75
+58            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+58-->[com.google.android.gms:play-services-base:15.0.1] /Users/sha/.gradle/caches/transforms-3/81ff02d2fc1f99cc673965460f9f26d6/transformed/jetified-play-services-base-15.0.1/AndroidManifest.xml:24:13-79
+59            android:exported="false"
+59-->[com.google.android.gms:play-services-base:15.0.1] /Users/sha/.gradle/caches/transforms-3/81ff02d2fc1f99cc673965460f9f26d6/transformed/jetified-play-services-base-15.0.1/AndroidManifest.xml:25:13-37
+60            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+60-->[com.google.android.gms:play-services-base:15.0.1] /Users/sha/.gradle/caches/transforms-3/81ff02d2fc1f99cc673965460f9f26d6/transformed/jetified-play-services-base-15.0.1/AndroidManifest.xml:26:13-72
+61
+62        <meta-data
+62-->[com.google.android.gms:play-services-basement:15.0.1] /Users/sha/.gradle/caches/transforms-3/ce592c7ecc54f20b4ca5214eaa141ea2/transformed/jetified-play-services-basement-15.0.1/AndroidManifest.xml:23:9-25:69
+63            android:name="com.google.android.gms.version"
+63-->[com.google.android.gms:play-services-basement:15.0.1] /Users/sha/.gradle/caches/transforms-3/ce592c7ecc54f20b4ca5214eaa141ea2/transformed/jetified-play-services-basement-15.0.1/AndroidManifest.xml:24:13-58
+64            android:value="@integer/google_play_services_version" />
+64-->[com.google.android.gms:play-services-basement:15.0.1] /Users/sha/.gradle/caches/transforms-3/ce592c7ecc54f20b4ca5214eaa141ea2/transformed/jetified-play-services-basement-15.0.1/AndroidManifest.xml:25:13-66
+65    </application>
+66
+67</manifest>
