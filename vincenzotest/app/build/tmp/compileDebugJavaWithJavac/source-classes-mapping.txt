@@ -1,0 +1,32 @@
+com/example/vincenzo/GpsTracker.java
+ com.example.vincenzo.GpsTracker
+com/example/vincenzo/Frag1.java
+ com.example.vincenzo.Frag1
+com/example/vincenzo/CafeImageList.java
+ com.example.vincenzo.CafeImageList
+com/example/vincenzo/Frag4.java
+ com.example.vincenzo.Frag4
+com/example/vincenzo/Frag3.java
+ com.example.vincenzo.Frag3
+com/example/vincenzo/second_activity.java
+ com.example.vincenzo.second_activity
+com/example/vincenzo/BuildConfig.java
+ com.example.vincenzo.BuildConfig
+com/example/vincenzo/Frag2.java
+ com.example.vincenzo.Frag2
+com/example/vincenzo/Frag1_1.java
+ com.example.vincenzo.Frag1_1
+ com.example.vincenzo.Frag1_1$1
+ com.example.vincenzo.Frag1_1$2
+ com.example.vincenzo.Frag1_1$3
+ com.example.vincenzo.Frag1_1$4
+ com.example.vincenzo.Frag1_1$5
+com/example/vincenzo/cafe.java
+ com.example.vincenzo.cafe
+com/example/vincenzo/MainActivity.java
+ com.example.vincenzo.MainActivity
+ com.example.vincenzo.MainActivity$1
+com/example/vincenzo/CafeRecyclerAdapter.java
+ com.example.vincenzo.CafeRecyclerAdapter
+ com.example.vincenzo.CafeRecyclerAdapter$ItemViewHolder
+ com.example.vincenzo.CafeRecyclerAdapter$ItemViewHolder$1
