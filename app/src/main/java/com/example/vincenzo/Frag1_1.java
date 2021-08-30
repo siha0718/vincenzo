@@ -26,6 +26,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -66,8 +67,8 @@ public class Frag1_1 extends Fragment {
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-    private double latitude;
-    private double longitude;
+    private double user_latitude;
+    private double user_longitude;
 
     @Nullable
     @Override
@@ -75,8 +76,8 @@ public class Frag1_1 extends Fragment {
         view= inflater.inflate(R.layout.frag1_1,container,false);
 
         RecyclerView recyclerView1 = view.findViewById(R.id.recyclerView1);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-        recyclerView1.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(Frag1_1.this.getActivity(),2);
+        recyclerView1.setLayoutManager(gridLayoutManager);
         recyclerView1.setHasFixedSize(true);
 
         mMyData = new ArrayList<>();
@@ -104,13 +105,13 @@ public class Frag1_1 extends Fragment {
 
                 gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
 
-                latitude = gpsTracker.getLatitude();
-                longitude = gpsTracker.getLongitude();
+                user_latitude = gpsTracker.getLatitude();
+                user_longitude = gpsTracker.getLongitude();
 
 //                String address = getCurrentAddress(latitude, longitude);
 //                textview_address.setText(address);
 
-                Toast.makeText(Frag1_1.this.getActivity(), "현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
+                Toast.makeText(Frag1_1.this.getActivity(), "현재위치 \n위도 " + user_latitude + "\n경도 " + user_longitude, Toast.LENGTH_LONG).show();
 
             }
         });
@@ -270,13 +271,18 @@ public class Frag1_1 extends Fragment {
 
     private void ThreadProc() {
 
+        gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
+
+        double user_latitude = gpsTracker.getLatitude();
+        double user_longitude = gpsTracker.getLongitude();
+
         new Thread() {
             @Override
             public void run() {
                 //superrun();
                 String str,receiveMsg = "";
 
-                String urlStr = "http://3.35.138.25/jsonprint5.php";
+                String urlStr = "http://3.35.138.25/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                 try {
                     URL url = new URL(urlStr);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();

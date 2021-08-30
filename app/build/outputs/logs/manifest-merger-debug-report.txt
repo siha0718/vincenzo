@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
+ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
 MERGED from [com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:2:1-22:12
 MERGED from [com.google.android.material:material:1.2.1] /Users/sha/.gradle/caches/transforms-3/c976378338645669dad60b5914a4e8e3/transformed/material-1.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] /Users/sha/.gradle/caches/transforms-3/c68edcdd10b64f27a58365e0b432dd77/transformed/constraintlayout-2.1.0/AndroidManifest.xml:2:1-11:12
@@ -52,20 +52,20 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/sha/.gradle/caches
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sha/.gradle/caches/transforms-3/4a686211be3134d52c983281414d9a4c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/sha/.gradle/caches/transforms-3/137fae5cb8b43fd4d77cda20fb259169/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/sha/.gradle/caches/transforms-3/301b99617320b59a57400f8a9ec84a15/transformed/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
+INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
+		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
 		INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-36:12
+		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:1-37:12
 		INJECTED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:2:11-69
@@ -88,7 +88,7 @@ MERGED from [com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.grad
 	android:name
 		ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:7:22-78
 application
-ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:9:5-34:19
+ADDED from /Users/sha/Documents/GitHub/vincenzo/app/src/main/AndroidManifest.xml:9:5-35:19
 MERGED from [com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:18:3-21:17
 MERGED from [com.google.android.libraries.maps:maps:3.1.0-beta] /Users/sha/.gradle/caches/transforms-3/0d724554e60e2671d52d61f83fe08612/transformed/jetified-maps-3.1.0-beta/AndroidManifest.xml:18:3-21:17
 MERGED from [com.google.android.material:material:1.2.1] /Users/sha/.gradle/caches/transforms-3/c976378338645669dad60b5914a4e8e3/transformed/material-1.2.1/AndroidManifest.xml:22:5-20
