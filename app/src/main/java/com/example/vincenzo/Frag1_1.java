@@ -93,6 +93,7 @@ public class Frag1_1 extends Fragment {
         adapter_cafe = new CafeRecyclerAdapter(this.getContext());
         recyclerView1.setAdapter(adapter_cafe);
 
+        gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
 
         Spinner spinner = view.findViewById(R.id.spinner);
 
@@ -108,11 +109,15 @@ public class Frag1_1 extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
                 Toast.makeText(getActivity(),Integer.toString(position),Toast.LENGTH_SHORT);
                 if(spinner.getSelectedItem().toString() == "혼잡도순"){
+                    user_latitude = gpsTracker.getLatitude();
+                    user_longitude = gpsTracker.getLongitude();
                     urlStr = "http://3.35.138.25/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
                 }else if(spinner.getSelectedItem().toString() == "거리순"){
+                    user_latitude = gpsTracker.getLatitude();
+                    user_longitude = gpsTracker.getLongitude();
                     urlStr = "http://3.35.138.25/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
@@ -124,8 +129,11 @@ public class Frag1_1 extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent){
                 spinner.setSelection(0);
-                urlStr = "http://3.35.138.25/jsonprint8.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                user_latitude = gpsTracker.getLatitude();
+                user_longitude = gpsTracker.getLongitude();
+                urlStr = "http://3.35.138.25/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                 ThreadProc(urlStr);
+
             }
         });
 
@@ -315,10 +323,10 @@ public class Frag1_1 extends Fragment {
 
     private void ThreadProc(String urlStr) {
 
-        gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
-
-        double user_latitude = gpsTracker.getLatitude();
-        double user_longitude = gpsTracker.getLongitude();
+//        gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
+//
+//        double user_latitude = gpsTracker.getLatitude();
+//        double user_longitude = gpsTracker.getLongitude();
 
         new Thread() {
             @Override
