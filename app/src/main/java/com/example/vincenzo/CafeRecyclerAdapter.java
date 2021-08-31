@@ -45,11 +45,14 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int position) {
         itemViewHolder.onBind(cafeList.get(position));
         itemViewHolder.setIsRecyclable(false);
+
     }
 
     @Override
     public int getItemCount() {   return cafeList.size();  }
-
+    public void clearAllItems() {
+        cafeList.clear();
+    }
     public void addItem(cafe cafe) {
         cafeList.add(cafe);
     }

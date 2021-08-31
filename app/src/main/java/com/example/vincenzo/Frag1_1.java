@@ -60,7 +60,7 @@ public class Frag1_1 extends Fragment {
 
     //리사이클러뷰 구현
     private RecyclerView recyclerView1;
-    private CafeRecyclerAdapter adapter;
+    private CafeRecyclerAdapter adapter_cafe;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList mMyData;
 
@@ -72,6 +72,8 @@ public class Frag1_1 extends Fragment {
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
     private double user_latitude;
     private double user_longitude;
+
+    private String urlStr;
 
     //spinner 배열
     private static final  String[] spinner_items = {"혼잡도순", "거리순"};
@@ -88,8 +90,9 @@ public class Frag1_1 extends Fragment {
 
         mMyData = new ArrayList<>();
 
-        adapter = new CafeRecyclerAdapter(this.getContext());
-        recyclerView1.setAdapter(adapter);
+        adapter_cafe = new CafeRecyclerAdapter(this.getContext());
+        recyclerView1.setAdapter(adapter_cafe);
+
 
         Spinner spinner = view.findViewById(R.id.spinner);
 
@@ -104,16 +107,29 @@ public class Frag1_1 extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
                 Toast.makeText(getActivity(),Integer.toString(position),Toast.LENGTH_SHORT);
+                if(spinner.getSelectedItem().toString() == "혼잡도순"){
+                    urlStr = "http://3.35.138.25/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    adapter_cafe.clearAllItems();
+                    ThreadProc(urlStr);
+
+                }else if(spinner.getSelectedItem().toString() == "거리순"){
+                    urlStr = "http://3.35.138.25/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    adapter_cafe.clearAllItems();
+                    ThreadProc(urlStr);
+
+                }
             }
 
             //아무것도 선택되지 않은 상태일 때
             @Override
             public void onNothingSelected(AdapterView<?> parent){
-
+                spinner.setSelection(0);
+                urlStr = "http://3.35.138.25/jsonprint8.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                ThreadProc(urlStr);
             }
         });
 
-        ThreadProc();
+        ThreadProc(urlStr);
 
         //위치정보 받기
         if (!checkLocationServicesStatus()) {
@@ -297,7 +313,7 @@ public class Frag1_1 extends Fragment {
     }
 
 
-    private void ThreadProc() {
+    private void ThreadProc(String urlStr) {
 
         gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
 
@@ -310,7 +326,7 @@ public class Frag1_1 extends Fragment {
                 //superrun();
                 String str,receiveMsg = "";
 
-                String urlStr = "http://3.35.138.25/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                //String urlStr = "http://3.35.138.25/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                 try {
                     URL url = new URL(urlStr);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -349,6 +365,7 @@ public class Frag1_1 extends Fragment {
 
     private void jsonParsing(String json) {
 
+
         try {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray cafeArr = jsonObject.getJSONArray("cafe");
@@ -369,12 +386,14 @@ public class Frag1_1 extends Fragment {
                 cafe.setLongitude(cafeObj.getDouble("longitude"));
                 // BookRecyclerAdapter에 Book
                 //adapter.addItem(cafe);
-                adapter.addItem(cafe);
+                adapter_cafe.addItem(cafe);
+
 
             }
 
 
-            adapter.notifyDataSetChanged();
+            adapter_cafe.notifyDataSetChanged();
+
 
 
         } catch (JSONException e) {
