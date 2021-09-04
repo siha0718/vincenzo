@@ -8,12 +8,17 @@
   "variantName": "debug",
   "elements": [
     {
-      "type": "UNIVERSAL",
-      "filters": [],
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0",
-      "outputFile": "resources-universalDebug.ap_"
+      "outputFile": "resources-armeabi-v7aDebug.ap_"
     }
   ],
   "elementType": "File"

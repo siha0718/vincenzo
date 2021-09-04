@@ -2,6 +2,9 @@ package com.example.vincenzo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.nfc.Tag;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +28,7 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
     private TextView textView1;
     private ImageView ImageView1;
     private Context mContext;
-
+    private Frag1_1 frag1_1 = new Frag1_1();
 
     public CafeRecyclerAdapter(Context context){
         this.mContext = context;
@@ -44,8 +47,8 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int position) {
         itemViewHolder.onBind(cafeList.get(position));
         itemViewHolder.setIsRecyclable(false);
-
     }
+
 
     @Override
     public int getItemCount() {   return cafeList.size();  }
@@ -80,6 +83,7 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
                         intent.putExtra("longitude", cafeList.get(pos).getLongitude());
                         intent.putExtra("rushlevel", cafeList.get(pos).getRushLevel());
                         intent.putExtra("rushratio", cafeList.get(pos).getRushRatio());
+                        intent.putExtra("distance", cafeList.get(pos).getDistance());
 
                         mContext.startActivity(intent);
                     }
@@ -94,17 +98,26 @@ public class CafeRecyclerAdapter extends RecyclerView.Adapter<CafeRecyclerAdapte
             String name = cafe.getName();
             int imageId = (int)(Math.random() * 5);
 
+            GpsTracker gpsTracker = new GpsTracker(mContext);
+
+            Location myLocation = new Location("point A");
+            Location cafeLocation = new Location("point B");
+            myLocation.setLatitude(gpsTracker.getLatitude());
+            myLocation.setLongitude(gpsTracker.getLongitude());
+            cafeLocation.setLatitude(cafe.getLatitude());
+            cafeLocation.setLongitude(cafe.getLongitude());
+
+            float distance = (myLocation.distanceTo(cafeLocation)/1000);
+
             if(name.equals("스타벅스숙대점")){
                textView1.setText(cafe.getName());
                ImageView1.setBackgroundResource(List.starbucks.get(imageId));
             }else if (name.equals("에이그레이트카페숙대점")){
                textView1.setText(cafe.getName());
                ImageView1.setBackgroundResource(List.agreat.get(imageId));
-
             }else if (name.equals("뽀빠")){
                 textView1.setText(cafe.getName());
                 ImageView1.setBackgroundResource(List.bbobba.get(imageId));
-
             }else if (name.equals("프라넬")){
                 textView1.setText(cafe.getName());
                 ImageView1.setBackgroundResource(List.flanel.get(imageId));

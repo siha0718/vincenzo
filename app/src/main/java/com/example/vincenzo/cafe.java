@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class cafe implements Serializable  {
 
-        public String name, address;
+        public String name, address, Distance;
         public Double size, latitude, longitude, RushRatio;
         public int RushLevel;
         public cafe() { }
@@ -50,6 +50,13 @@ public class cafe implements Serializable  {
         }
         public void setRushRatio(Double RushRatio) {
             this.RushRatio = RushRatio;
+        }
+
+        public String getDistance()  {
+            return Distance;
+        }
+        public void setDistance(String Distance) {
+            this.Distance = Distance;
         }
 
         }

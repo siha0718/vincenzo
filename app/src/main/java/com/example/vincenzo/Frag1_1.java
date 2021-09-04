@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -71,8 +72,8 @@ public class Frag1_1 extends Fragment {
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-    private double user_latitude;
-    private double user_longitude;
+    public double user_latitude;
+    public double user_longitude;
 
     private String urlStr;
 
@@ -98,8 +99,10 @@ public class Frag1_1 extends Fragment {
         adapter_cafe = new CafeRecyclerAdapter(this.getContext());
         recyclerView1.setAdapter(adapter_cafe);
 
+        //거리 구하기
         gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
 
+        //스피너
         Spinner spinner = view.findViewById(R.id.spinner);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
@@ -119,7 +122,6 @@ public class Frag1_1 extends Fragment {
                     urlStr = "http://3.36.120.23/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
-
                 }else if(spinner.getSelectedItem().toString() == "거리순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
@@ -427,8 +429,9 @@ public class Frag1_1 extends Fragment {
                 cafe.setAddress(cafeObj.getString("address"));
                 cafe.setLatitude(cafeObj.getDouble("latitude"));
                 cafe.setLongitude(cafeObj.getDouble("longitude"));
-                cafe.setRushLevel(cafeObj.optInt("RushLevel"));
-                cafe.setRushRatio(cafeObj.optDouble("RushRatio"));
+                cafe.setRushLevel(cafeObj.optInt("rushlevel"));
+                cafe.setRushRatio(cafeObj.optDouble("rushratio"));
+                //cafe.setDistance(cafeObj.getString("distance"));
 
                 adapter_cafe.addItem(cafe);
             }

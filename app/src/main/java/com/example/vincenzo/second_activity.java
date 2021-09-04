@@ -46,7 +46,7 @@ import java.util.ArrayList;
 import android.view.MenuItem;
 public class second_activity extends AppCompatActivity implements View.OnClickListener{
 
-    public String name, address;
+    public String name, address, distance_str, distance;
     public Double latitude, longitude, rushratio;
     public int rushlevel;
 
@@ -55,7 +55,7 @@ public class second_activity extends AppCompatActivity implements View.OnClickLi
     private SecondRecyclerAdapter adapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Context sContext;
-    private TextView textView, RushRatio_View, address_textview;
+    private TextView textView, RushRatio_View, address_textview, Distance_View;
     private ArrayList<String> mMyData = new ArrayList<>();
 
 
@@ -69,6 +69,7 @@ public class second_activity extends AppCompatActivity implements View.OnClickLi
         textView = findViewById(R.id.cafename_view);
         RushRatio_View = findViewById(R.id.RushRatio);
         address_textview = findViewById(R.id.address);
+        Distance_View = findViewById(R.id.distance);
         second_recyclerView = findViewById(R.id.second_recyclerView);
         second_recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -86,6 +87,8 @@ public class second_activity extends AppCompatActivity implements View.OnClickLi
         rushratio = intent.getExtras().getDouble("rushratio");
         //rushlevel = intent.getExtras().getInt("rushlevel");
         rushlevel = 3;
+        distance = intent.getExtras().getString("distance");
+        //distance_str = Double.toString(distance);
 
         mMyData.add(name);
         mMyData.add(name);
@@ -98,6 +101,7 @@ public class second_activity extends AppCompatActivity implements View.OnClickLi
 
         textView.setText(name);
         address_textview.setText(address);
+        Distance_View.setText(distance_str);
 
         RushRatio_View.setText(rushratio + "%");
         if(rushlevel == 1){
