@@ -1,9 +1,12 @@
 package com.example.vincenzo;
 
+import androidx.activity.OnBackPressedDispatcherOwner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,10 +19,15 @@ import net.daum.mf.map.api.MapView;
 import net.daum.mf.map.api.MapPoint;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -30,12 +38,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import android.view.MenuItem;
+public class second_activity extends AppCompatActivity implements View.OnClickListener{
 
-public class second_activity extends AppCompatActivity {
+    public String name, address;
+    public Double latitude, longitude, rushratio;
+    public int rushlevel;
+
+    //리사이클러뷰 구현
+    private RecyclerView second_recyclerView;
+    private SecondRecyclerAdapter adapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private Context sContext;
+    private TextView textView, RushRatio_View, address_textview;
+    private ArrayList<String> mMyData = new ArrayList<>();
+
 
 
     @Override
@@ -43,32 +65,73 @@ public class second_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        TextView textView = findViewById(R.id.second_view);
+
+        textView = findViewById(R.id.cafename_view);
+        RushRatio_View = findViewById(R.id.RushRatio);
+        address_textview = findViewById(R.id.address);
+        second_recyclerView = findViewById(R.id.second_recyclerView);
+        second_recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        second_recyclerView.setLayoutManager(layoutManager);
+        adapter = new SecondRecyclerAdapter(mMyData);
+        second_recyclerView.setAdapter(adapter);
+
 
         Intent intent = getIntent();
-        String name = intent.getExtras().getString("name");
-        Double latitude = intent.getExtras().getDouble("latitude");
-        Double longitude = intent.getExtras().getDouble("longitude");
+        name = intent.getExtras().getString("name");
+        address = intent.getExtras().getString("address");
+        latitude = intent.getExtras().getDouble("latitude");
+        longitude = intent.getExtras().getDouble("longitude");
+        rushratio = intent.getExtras().getDouble("rushratio");
+        //rushlevel = intent.getExtras().getInt("rushlevel");
+        rushlevel = 3;
+
+        mMyData.add(name);
+        mMyData.add(name);
+        mMyData.add(name);
+        mMyData.add(name);
+        mMyData.add(name);
+
+
+
         textView.setText(name);
+        address_textview.setText(address);
+
+        RushRatio_View.setText(rushratio + "%");
+        if(rushlevel == 1){
+            RushRatio_View.setBackgroundResource(R.drawable.light_blue);
+            RushRatio_View.setTextColor(Color.parseColor("#5D5FEF"));
+        }else if(rushlevel == 2){
+            RushRatio_View.setBackgroundResource(R.drawable.light_green);
+            RushRatio_View.setTextColor(Color.parseColor("#51F08A"));
+        }else if(rushlevel == 3){
+            RushRatio_View.setBackgroundResource(R.drawable.light_yellow);
+            RushRatio_View.setTextColor(Color.parseColor("#F0D046"));
+        }else if(rushlevel == 4){
+            RushRatio_View.setBackgroundResource(R.drawable.light_red);
+            RushRatio_View.setTextColor(Color.parseColor("#F07A75"));
+        }
+
+        //뒤로가기
+        Button back_btn = (Button)findViewById(R.id.back_button);
+        back_btn.setOnClickListener(this);
 
 
         MapView mapView = new MapView(this);
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);
-//
-//        // 중심점 변경
-        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(latitude, longitude), true);
-//
-// 줌 레벨 변경
-        //mapView.setZoomLevel(7, true);
 
-// 중심점 변경 + 줌 레벨 변경
+        // 중심점 변경
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(latitude, longitude), true);
+        // 줌 레벨 변경
+        //mapView.setZoomLevel(7, true);
+        // 중심점 변경 + 줌 레벨 변경
         mapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(latitude,longitude), 1, true);
         //줌 레벨이 낮을수록 첫 화면에서 확대되어 보임!
-// 줌 인
+        // 줌 인
         mapView.zoomIn(true);
-
-// 줌 아웃
+        // 줌 아웃
         mapView.zoomOut(true);
 
         MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(latitude, longitude);
@@ -81,7 +144,11 @@ public class second_activity extends AppCompatActivity {
 
         mapView.addPOIItem(marker);
 
-//        tv=findViewById(R.id.tv);
-//        tv.setMovementMethod(new ScrollingMovementMethod());
+    }
+
+    //뒤로가기
+    @Override
+    public void onClick(View view) {
+        finish();
     }
 }

@@ -877,6 +877,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -1657,6 +1658,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+drawable _0per
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1737,6 +1739,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable actionbar
+drawable ad
 drawable agreat1
 drawable agreat2
 drawable agreat3
@@ -1744,6 +1747,7 @@ drawable agreat4
 drawable agreat5
 drawable avd_hide_password
 drawable avd_show_password
+drawable backbt
 drawable baglefactory1
 drawable baglefactory2
 drawable baglefactory3
@@ -1783,6 +1787,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cafe1
 drawable cafecubano1
 drawable cafecubano2
 drawable cafecubano3
@@ -1798,6 +1803,7 @@ drawable caffeinejungdok2
 drawable caffeinejungdok3
 drawable caffeinejungdok4
 drawable caffeinejungdok5
+drawable call
 drawable caphecozy1
 drawable caphecozy2
 drawable caphecozy3
@@ -1883,6 +1889,8 @@ drawable gongcha4
 drawable gongcha5
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable head
+drawable header2
 drawable headermdpi
 drawable hyoidabang1
 drawable hyoidabang2
@@ -1904,6 +1912,12 @@ drawable ilmio2
 drawable ilmio3
 drawable ilmio4
 drawable ilmio5
+drawable light_blue
+drawable light_green
+drawable light_red
+drawable light_yellow
+drawable line
+drawable map
 drawable maps_blue_dot
 drawable maps_btn_left
 drawable maps_btn_left_normal
@@ -2013,11 +2027,13 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable outline
 drawable redwood1
 drawable redwood2
 drawable redwood3
 drawable redwood4
 drawable redwood5
+drawable saved
 drawable shop1
 drawable shop2
 drawable shop3
@@ -2075,6 +2091,7 @@ id FUNCTION
 id ImageTest
 id META
 id NO_DEBUG
+id RushRatio
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -2146,6 +2163,8 @@ id actionbar
 id actions
 id activity_chooser_view_content
 id add
+id address
+id addressbox
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2165,6 +2184,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back_button
 id barrier
 id base_compass_button
 id baseline
@@ -2179,8 +2199,11 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id button
+id button3
 id buttonPanel
+id button_linear
 id cache_measures
+id cafename_view
 id call_actionbutton
 id cancel_action
 id cancel_button
@@ -2242,6 +2265,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id distance
 id divider
 id dragAnticlockwise
 id dragClockwise
@@ -2323,6 +2347,7 @@ id impression_logger
 id included
 id indoor_content
 id info
+id information
 id internal_header
 id invisible
 id is_hidden_after_clipped
@@ -2337,9 +2362,13 @@ id layout
 id left
 id legacy
 id light
+id line
 id line1
+id line2
 id line3
 id linear
+id linearLayout2
+id linearLayout3
 id link_textbox
 id list
 id listMode
@@ -2407,6 +2436,8 @@ id off
 id on
 id on_map_directions_button
 id on_map_secondary_action_button_container
+id open_detail
+id opentime
 id outline
 id overshoot
 id packed
@@ -2470,7 +2501,8 @@ id search_omnibox_text_clear
 id search_plate
 id search_src_text
 id search_voice_btn
-id second_view
+id second_itemview
+id second_recyclerView
 id select_dialog_listview
 id selected
 id shadow
@@ -2516,6 +2548,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id swipe_container
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2543,6 +2576,7 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView1
+id textView10
 id textView2
 id textView3
 id textView4
@@ -2732,6 +2766,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout second_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3707,6 +3742,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

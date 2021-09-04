@@ -32,6 +32,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
@@ -78,6 +79,9 @@ public class Frag1_1 extends Fragment {
     //spinner 배열
     private static final  String[] spinner_items = {"혼잡도순", "거리순"};
 
+    //새로고침
+    private SwipeRefreshLayout swipeRefreshLayout;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -87,6 +91,7 @@ public class Frag1_1 extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Frag1_1.this.getActivity(),2);
         recyclerView1.setLayoutManager(gridLayoutManager);
         recyclerView1.setHasFixedSize(true);
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
 
         mMyData = new ArrayList<>();
 
@@ -111,14 +116,14 @@ public class Frag1_1 extends Fragment {
                 if(spinner.getSelectedItem().toString() == "혼잡도순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://3.35.138.25/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.36.120.23/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
                 }else if(spinner.getSelectedItem().toString() == "거리순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://3.35.138.25/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.36.120.23/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
@@ -131,11 +136,45 @@ public class Frag1_1 extends Fragment {
                 spinner.setSelection(0);
                 user_latitude = gpsTracker.getLatitude();
                 user_longitude = gpsTracker.getLongitude();
-                urlStr = "http://3.35.138.25/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                urlStr = "http://3.36.120.23/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                 ThreadProc(urlStr);
 
             }
         });
+
+        //새로고침
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                gpsTracker = new GpsTracker(Frag1_1.this.getActivity());
+
+                if(spinner.getSelectedItem().toString() == "혼잡도순"){
+                    user_latitude = gpsTracker.getLatitude();
+                    user_longitude = gpsTracker.getLongitude();
+                    urlStr = "http://3.36.120.23/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    adapter_cafe.clearAllItems();
+                    ThreadProc(urlStr);
+
+                }else if(spinner.getSelectedItem().toString() == "거리순") {
+                    user_latitude = gpsTracker.getLatitude();
+                    user_longitude = gpsTracker.getLongitude();
+                    urlStr = "http://3.36.120.23/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    adapter_cafe.clearAllItems();
+                    ThreadProc(urlStr);
+
+                }else{
+                    spinner.setSelection(0);
+                    user_latitude = gpsTracker.getLatitude();
+                    user_longitude = gpsTracker.getLongitude();
+                    urlStr = "http://3.36.120.23/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    ThreadProc(urlStr);
+
+                }
+
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
 
         ThreadProc(urlStr);
 
@@ -385,18 +424,13 @@ public class Frag1_1 extends Fragment {
                 cafe cafe = new cafe();
 
                 cafe.setName(cafeObj.getString("name"));
-                cafe.setResId(cafe.getResId());
-
-
-//                cafe.setAddress(cafeObj.getString("address"));
-//                cafe.setSize(cafeObj.getString("size"));
+                cafe.setAddress(cafeObj.getString("address"));
                 cafe.setLatitude(cafeObj.getDouble("latitude"));
                 cafe.setLongitude(cafeObj.getDouble("longitude"));
-                // BookRecyclerAdapter에 Book
-                //adapter.addItem(cafe);
+                cafe.setRushLevel(cafeObj.optInt("RushLevel"));
+                cafe.setRushRatio(cafeObj.optDouble("RushRatio"));
+
                 adapter_cafe.addItem(cafe);
-
-
             }
 
 

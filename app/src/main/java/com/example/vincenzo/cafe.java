@@ -4,10 +4,9 @@ import java.io.Serializable;
 
 public class cafe implements Serializable  {
 
-
         public String name, address;
-        public Double size, latitude, longitude;
-        public int resId;
+        public Double size, latitude, longitude, RushRatio;
+        public int RushLevel;
         public cafe() { }
 
         public String getName()  {
@@ -43,9 +42,15 @@ public class cafe implements Serializable  {
             this.longitude = longitude;
         }
 
-        public int getResId() { return resId; }
-        public void setResId(int resId) {  this.resId = resId;  }
+        public int getRushLevel() { return RushLevel; }
+        public void setRushLevel(int RushLevel) {  this.RushLevel = RushLevel;  }
 
+        public Double getRushRatio()  {
+            return RushRatio;
+        }
+        public void setRushRatio(Double RushRatio) {
+            this.RushRatio = RushRatio;
+        }
 
         }
 
