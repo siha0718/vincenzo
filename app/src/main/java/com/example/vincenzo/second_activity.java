@@ -93,6 +93,7 @@ public class second_activity extends AppCompatActivity implements View.OnClickLi
         mMyData.add(name);
         mMyData.add(name);
 
+        adapter.notifyDataSetChanged();
 
 
         textView.setText(name);

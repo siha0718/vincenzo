@@ -23,15 +23,14 @@
     <!-- 이미지 리사이클러뷰 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/second_recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#F0F0F0"
         app:layout_constraintBottom_toTopOf="@+id/cafename_view"
-        app:layout_constraintTop_toBottomOf="@id/back_button">
+        app:layout_constraintTop_toBottomOf="@id/back_button"
 
-    </androidx.recyclerview.widget.RecyclerView>
+    />
 
 
     <TextView
