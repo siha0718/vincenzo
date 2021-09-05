@@ -1,0 +1,86 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.vincenzo"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:7:5-81
+13-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:7:22-78
+14
+15    <application
+15-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:9:5-33:19
+16        android:allowBackup="true"
+16-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.5.0] /Users/sha/.gradle/caches/transforms-3/e759884e8e1539e68246ec4d8729cc98/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/ic_launcher"
+19-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:11:9-43
+20        android:label="@string/app_name"
+20-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:12:9-41
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:13:9-54
+22        android:supportsRtl="true"
+22-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:14:9-35
+23        android:testOnly="true"
+24        android:theme="@style/Theme.Vincenzo"
+24-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:15:9-46
+25        android:usesCleartextTraffic="true" >
+25-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:16:9-44
+26        <activity
+26-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:17:9-19:39
+27            android:name="com.example.vincenzo.second_activity"
+27-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:18:13-44
+28            android:exported="true" />
+28-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:19:13-36
+29        <activity
+29-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:20:9-28:20
+30            android:name="com.example.vincenzo.MainActivity"
+30-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:21:13-41
+31            android:exported="true" >
+31-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:22:13-36
+32            <intent-filter>
+32-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:23:13-27:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:24:17-69
+33-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:24:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:26:17-77
+35-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:26:27-74
+36            </intent-filter>
+37        </activity>
+38
+39        <meta-data
+39-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:30:9-32:64
+40            android:name="com.kakao.sdk.AppKey"
+40-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:31:13-48
+41            android:value="818522ea695f7a20c1eb9d9843676b37" />
+41-->/Users/sha/Documents/GitHub/vincenzo/vincenzotest/app/src/main/AndroidManifest.xml:32:13-61
+42
+43        <activity
+43-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:10:9-14:67
+44            android:name="com.gun0912.tedpermission.TedPermissionActivity"
+44-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:11:13-75
+45            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
+45-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:12:13-144
+46            android:screenOrientation="unspecified"
+46-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:13:13-52
+47            android:theme="@style/Theme.Transparent.Permission" />
+47-->[gun0912.ted:tedpermission:2.2.0] /Users/sha/.gradle/caches/transforms-3/64ea3aa01797520cd023a2b2f02008da/transformed/jetified-tedpermission-2.2.0/AndroidManifest.xml:14:13-64
+48    </application>
+49
+50</manifest>
