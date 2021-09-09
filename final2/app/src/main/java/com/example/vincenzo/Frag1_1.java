@@ -140,15 +140,7 @@ public class Frag1_1 extends Fragment {
             }
         });
 
-        ImageButton mapview1 = (ImageButton) view.findViewById(R.id.imageView14);
-        mapview1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), third_activity.class);
-                startActivity(intent);
 
-            }
-        });
 
                 adapter.setDropDownViewResource(R.layout.spinner_dropdown);
         spinner.setAdapter(adapter);
@@ -160,14 +152,14 @@ public class Frag1_1 extends Fragment {
                 if(spinner.getSelectedItem().toString() == "혼잡도순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://13.125.186.202/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.34.139.5/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
                 }else if(spinner.getSelectedItem().toString() == "거리순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://13.125.186.202/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.34.139.5/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
@@ -180,7 +172,7 @@ public class Frag1_1 extends Fragment {
                 spinner.setSelection(0);
                 user_latitude = gpsTracker.getLatitude();
                 user_longitude = gpsTracker.getLongitude();
-                urlStr = "http://13.125.186.202/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                urlStr = "http://3.34.139.5/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                 ThreadProc(urlStr);
 
             }
@@ -195,14 +187,14 @@ public class Frag1_1 extends Fragment {
                 if(spinner.getSelectedItem().toString() == "혼잡도순"){
                             user_latitude = gpsTracker.getLatitude();
                             user_longitude = gpsTracker.getLongitude();
-                            urlStr = "http://13.125.186.202/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                            urlStr = "http://3.34.139.5/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                             adapter_cafe.clearAllItems();
                             ThreadProc(urlStr);
 
                 }else if(spinner.getSelectedItem().toString() == "거리순") {
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://13.125.186.202/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.34.139.5/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
@@ -210,7 +202,7 @@ public class Frag1_1 extends Fragment {
                         spinner.setSelection(0);
                         user_latitude = gpsTracker.getLatitude();
                         user_longitude = gpsTracker.getLongitude();
-                        urlStr = "http://13.125.186.202/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                        urlStr = "http://3.34.139.5/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                         ThreadProc(urlStr);
 
                     }

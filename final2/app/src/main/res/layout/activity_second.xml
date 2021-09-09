@@ -72,13 +72,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/distance">
 
-        <Button
+        <ImageButton
             android:id="@+id/button"
             android:layout_width="23dp"
             android:layout_height="43dp"
             android:layout_marginRight="65dp"
             android:layout_weight="1"
-            android:background="@drawable/saved"
+            android:background="@drawable/ic_subrestore"
 
             />
 
@@ -107,7 +107,7 @@
             android:layout_width="31dp"
             android:layout_height="43dp"
             android:layout_weight="1"
-            android:background="@drawable/call"
+            android:background="@drawable/ic_subphone"
             android:padding="0sp"
             android:scaleType="centerCrop"
             android:text="View3" />
@@ -138,53 +138,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/address">
-
-
-        <TextView
-            android:id="@+id/addressbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/outline"
-            android:gravity="center"
-            android:text="지번"
-            android:textSize="8sp"
-            app:layout_constraintEnd_toStartOf="@id/textView10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/address" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:text="서울시 용산구 청파동2가 60-1 1F"
-            android:textSize="10sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/addressbox"
-            app:layout_constraintStart_toEndOf="@id/addressbox"
-            app:layout_constraintTop_toBottomOf="@id/address" />
-
-    </LinearLayout>
-
 
     <RelativeLayout
         android:id="@+id/map_view"
         android:layout_width="match_parent"
-        android:layout_height="85.72dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="10dp"
         android:paddingLeft="11dp"
         android:paddingRight="11dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@id/address">
 
     </RelativeLayout>
 

@@ -152,7 +152,7 @@
             app:srcCompat="?android:attr/actionModeWebSearchDrawable"
             android:background="@android:color/transparent"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageView14"
             android:layout_width="20dp"
             android:layout_height="20dp"
