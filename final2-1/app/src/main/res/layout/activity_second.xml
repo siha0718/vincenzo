@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".second_activity">
+
+
+    <!-- 뒤로가기 버튼 -->
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="11.11dp"
+        android:layout_height="20.21dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/backbt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- 이미지 리사이클러뷰 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/second_recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cafename_view"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
+
+        />
+
+
+    <TextView
+        android:id="@+id/cafename_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="16dp"
+        android:text="을의커피"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/second_recyclerView" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="16dp"
+        android:lineHeight="18.78px"
+        android:textSize="15sp"
+        android:textColor="@color/qu_grey_600"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cafename_view"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/button_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distance">
+
+        <ImageButton
+            android:id="@+id/button"
+            android:layout_width="23dp"
+            android:layout_height="43dp"
+            android:layout_marginRight="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_subrestore"
+
+            />
+
+        <TextView
+            android:id="@+id/RushRatio"
+            android:layout_width="33dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="65dp"
+            android:layout_weight="1"
+            android:background="@drawable/light_blue"
+            android:gravity="center"
+            android:scaleType="centerCrop"
+            android:shadowColor="#000000"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="10%"
+            android:textColor="#5d5fef"
+            android:textSize="14sp"
+
+            />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="31dp"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_subphone"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            android:text="View3" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="11dp"
+        android:background="#E5E5E5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_linear" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="16dp"
+        android:text="서울특별시 용산구 청파로47나길 13 1F"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+
+    <RelativeLayout
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address">
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="16.28dp"
+        android:layout_marginRight="11dp"
+        android:background="#E5E5E5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_view" />
+
+
+    <TextView
+        android:id="@+id/information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="16dp"
+        android:text="편의정보"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/information">
+
+        <TextView
+            android:id="@+id/opentime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:text="영업시간"
+            android:textColor="#979797"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@id/information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/information" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <TextView
+            android:id="@+id/open_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="11dp"
+            android:text="월-금: 11:00 - 22:00\n토-일: 12:00 - 22:00\n\n만원 미만"
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
