@@ -82,7 +82,7 @@ public class Frag1_1 extends Fragment {
     private String urlStr;
 
     //spinner 배열
-    private static final  String[] spinner_items = {"혼잡도순", "거리순"};
+    private static final  String[] spinner_items = {"여유순", "거리순"};
 
     private SwipeRefreshLayout swipeRefreshLayout;
 
@@ -142,7 +142,7 @@ public class Frag1_1 extends Fragment {
 
 
 
-                adapter.setDropDownViewResource(R.layout.spinner_dropdown);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             //선택되면
@@ -152,14 +152,14 @@ public class Frag1_1 extends Fragment {
                 if(spinner.getSelectedItem().toString() == "혼잡도순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://52.79.206.227/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.36.113.102/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
                 }else if(spinner.getSelectedItem().toString() == "거리순"){
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://52.79.206.227/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.36.113.102/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
@@ -172,8 +172,9 @@ public class Frag1_1 extends Fragment {
                 spinner.setSelection(0);
                 user_latitude = gpsTracker.getLatitude();
                 user_longitude = gpsTracker.getLongitude();
-                urlStr = "http://52.79.206.227/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                urlStr = "http://3.36.113.102/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                 ThreadProc(urlStr);
+
 
             }
         });
@@ -187,14 +188,14 @@ public class Frag1_1 extends Fragment {
                 if(spinner.getSelectedItem().toString() == "혼잡도순"){
                             user_latitude = gpsTracker.getLatitude();
                             user_longitude = gpsTracker.getLongitude();
-                            urlStr = "http://52.79.206.227/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                            urlStr = "http://3.36.113.102/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                             adapter_cafe.clearAllItems();
                             ThreadProc(urlStr);
 
                 }else if(spinner.getSelectedItem().toString() == "거리순") {
                     user_latitude = gpsTracker.getLatitude();
                     user_longitude = gpsTracker.getLongitude();
-                    urlStr = "http://52.79.206.227/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                    urlStr = "http://3.36.113.102/jsonprint7.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                     adapter_cafe.clearAllItems();
                     ThreadProc(urlStr);
 
@@ -202,7 +203,7 @@ public class Frag1_1 extends Fragment {
                         spinner.setSelection(0);
                         user_latitude = gpsTracker.getLatitude();
                         user_longitude = gpsTracker.getLongitude();
-                        urlStr = "http://52.79.206.227/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
+                        urlStr = "http://3.36.113.102/jsonprint9.php?user_latitude=" + user_latitude + "&user_longitude=" + user_longitude;
                         ThreadProc(urlStr);
 
                     }
